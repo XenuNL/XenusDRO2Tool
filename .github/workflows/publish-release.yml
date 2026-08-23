@@ -17,22 +17,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build release package
+        shell: pwsh
+        run: ./publisher/build-package.ps1
+
       - name: Read release control
         id: meta
         shell: pwsh
         run: |
           $cfg = Get-Content -LiteralPath 'publisher/release.json' -Raw | ConvertFrom-Json
           if ($cfg.channel -notin @('stable','testing')) { throw 'channel must be stable or testing' }
-          if (-not (Test-Path -LiteralPath $cfg.packagePath)) { throw "Package not found: $($cfg.packagePath)" }
-          $file = Split-Path -Leaf $cfg.packagePath
-          $sha = (Get-FileHash -LiteralPath $cfg.packagePath -Algorithm SHA256).Hash.ToLowerInvariant()
-          $size = (Get-Item -LiteralPath $cfg.packagePath).Length
+          $package = Join-Path 'dist' $cfg.assetName
+          if (-not (Test-Path -LiteralPath $package)) { throw "Package not found: $package" }
+          $sha = (Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash.ToLowerInvariant()
+          $size = (Get-Item -LiteralPath $package).Length
           "channel=$($cfg.channel)" >> $env:GITHUB_OUTPUT
           "version=$($cfg.version)" >> $env:GITHUB_OUTPUT
           "tag=$($cfg.tag)" >> $env:GITHUB_OUTPUT
           "title=$($cfg.title)" >> $env:GITHUB_OUTPUT
-          "package=$($cfg.packagePath)" >> $env:GITHUB_OUTPUT
-          "filename=$file" >> $env:GITHUB_OUTPUT
+          "package=$package" >> $env:GITHUB_OUTPUT
+          "filename=$($cfg.assetName)" >> $env:GITHUB_OUTPUT
           "sha=$sha" >> $env:GITHUB_OUTPUT
           "size=$size" >> $env:GITHUB_OUTPUT
           "prerelease=$([string]$cfg.prerelease).ToLowerInvariant()" >> $env:GITHUB_OUTPUT
