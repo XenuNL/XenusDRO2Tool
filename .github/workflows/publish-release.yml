@@ -1,0 +1,95 @@
+name: Publish DRO2 Tool Release
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'publisher/release.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read release control
+        id: meta
+        shell: pwsh
+        run: |
+          $cfg = Get-Content -LiteralPath 'publisher/release.json' -Raw | ConvertFrom-Json
+          if ($cfg.channel -notin @('stable','testing')) { throw 'channel must be stable or testing' }
+          if (-not (Test-Path -LiteralPath $cfg.packagePath)) { throw "Package not found: $($cfg.packagePath)" }
+          $file = Split-Path -Leaf $cfg.packagePath
+          $sha = (Get-FileHash -LiteralPath $cfg.packagePath -Algorithm SHA256).Hash.ToLowerInvariant()
+          $size = (Get-Item -LiteralPath $cfg.packagePath).Length
+          "channel=$($cfg.channel)" >> $env:GITHUB_OUTPUT
+          "version=$($cfg.version)" >> $env:GITHUB_OUTPUT
+          "tag=$($cfg.tag)" >> $env:GITHUB_OUTPUT
+          "title=$($cfg.title)" >> $env:GITHUB_OUTPUT
+          "package=$($cfg.packagePath)" >> $env:GITHUB_OUTPUT
+          "filename=$file" >> $env:GITHUB_OUTPUT
+          "sha=$sha" >> $env:GITHUB_OUTPUT
+          "size=$size" >> $env:GITHUB_OUTPUT
+          "prerelease=$([string]$cfg.prerelease).ToLowerInvariant()" >> $env:GITHUB_OUTPUT
+          "gameBranch=$($cfg.gameBranch)" >> $env:GITHUB_OUTPUT
+          "gameBuild=$($cfg.gameBuild)" >> $env:GITHUB_OUTPUT
+          "minimumLauncherVersion=$($cfg.minimumLauncherVersion)" >> $env:GITHUB_OUTPUT
+
+      - name: Create or update GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag='${{ steps.meta.outputs.tag }}'
+          $pkg='${{ steps.meta.outputs.package }}'
+          $title='${{ steps.meta.outputs.title }}'
+          $pre='${{ steps.meta.outputs.prerelease }}'
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -ne 0) {
+            $args=@('release','create',$tag,$pkg,'--title',$title,'--notes',"Automated release $tag")
+            if ($pre -eq 'true') { $args += '--prerelease' }
+            & gh @args
+            if ($LASTEXITCODE -ne 0) { throw 'gh release create failed' }
+          } else {
+            gh release upload $tag $pkg --clobber
+            if ($LASTEXITCODE -ne 0) { throw 'gh release upload failed' }
+          }
+
+      - name: Update online manifest
+        shell: pwsh
+        run: |
+          $channel='${{ steps.meta.outputs.channel }}'
+          $version='${{ steps.meta.outputs.version }}'
+          $tag='${{ steps.meta.outputs.tag }}'
+          $filename='${{ steps.meta.outputs.filename }}'
+          $branchName = if ($channel -eq 'testing') { "Xenu's Testing" } else { 'Stable' }
+          $manifest = [ordered]@{
+            schemaVersion = 1
+            branch = $branchName
+            version = $version
+            downloadUrl = "https://github.com/${{ github.repository }}/releases/download/$tag/$filename"
+            sha256 = '${{ steps.meta.outputs.sha }}'
+            size = [int64]'${{ steps.meta.outputs.size }}'
+            minimumLauncherVersion = '${{ steps.meta.outputs.minimumLauncherVersion }}'
+            gameBranch = '${{ steps.meta.outputs.gameBranch }}'
+            gameBuild = '${{ steps.meta.outputs.gameBuild }}'
+            notes = "Published automatically by GitHub Actions from $tag."
+          }
+          $manifest | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath ("update/$channel.json") -Encoding utf8
+
+      - name: Commit manifest
+        shell: pwsh
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add update/stable.json update/testing.json
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m "Publish ${{ steps.meta.outputs.version }} to ${{ steps.meta.outputs.channel }}"
+            git push
+          }
