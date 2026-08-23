@@ -10,6 +10,7 @@
   "minimumLauncherVersion": "DEV-009",
   "gameBranch": "alpha",
   "gameBuild": "0.20.0",
+  "ensureUiReadyMarker": true,
   "replacements": [
     {
       "from": "$script:DevBuildId='DEV-014'",
@@ -22,10 +23,6 @@
     {
       "from": "$footer.Text=($script:DevBuildId+' · GitHub online self-update test | Lobby Tires runtime baseline: '+$script:RuntimeBaseline)",
       "to": "$footer.Text=($script:DevBuildId+' · Automated GitHub publisher | Lobby Tires runtime baseline: '+$script:RuntimeBaseline)"
-    },
-    {
-      "from": "Write-LauncherRuntimeTrace ('WINFORMS_FORM_SHOWN handle=0x'+$form.Handle.ToInt64().ToString('X')+' visible='+$visible+' showInTaskbar='+$form.ShowInTaskbar+' state='+$form.WindowState)\n        $script:PrimeStarted=$true",
-      "to": "Write-LauncherRuntimeTrace ('WINFORMS_FORM_SHOWN handle=0x'+$form.Handle.ToInt64().ToString('X')+' visible='+$visible+' showInTaskbar='+$form.ShowInTaskbar+' state='+$form.WindowState)\n        if(-not [string]::IsNullOrWhiteSpace($env:XENUS_UI_READY_MARKER)){try{Set-Content -LiteralPath $env:XENUS_UI_READY_MARKER -Value ('shown='+(Get-Date -Format o)+' handle='+$form.Handle.ToInt64()+' visible='+$visible) -Encoding ASCII}catch{}}\n        $script:PrimeStarted=$true"
     }
   ]
 }
