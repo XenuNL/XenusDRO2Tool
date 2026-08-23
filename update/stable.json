@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "branch": "Stable",
+  "version": null,
+  "downloadUrl": null,
+  "sha256": null,
+  "size": null,
+  "minimumLauncherVersion": "DEV-009",
+  "gameBranch": "alpha",
+  "gameBuild": "0.20.0",
+  "notes": "No public Stable release has been published yet."
+}
