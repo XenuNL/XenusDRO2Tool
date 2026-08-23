@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "branch": "Stable",
-  "version": null,
-  "downloadUrl": null,
-  "sha256": null,
-  "size": null,
+  "version": "DEV-013",
+  "downloadUrl": "https://github.com/XenuNL/XenusDRO2Tool/releases/download/dev-online-test-1/XenusDRO2Tool_DEV-013.zip",
+  "sha256": "d97b675bd57097eaef9d6105f405e0777ca5f6bbf320bad5af2c505396f0fe94",
+  "size": 888313,
   "minimumLauncherVersion": "DEV-009",
   "gameBranch": "alpha",
   "gameBuild": "0.20.0",
-  "notes": "No public Stable release has been published yet."
+  "notes": "Stable rollback target for first online updater acceptance test."
 }
