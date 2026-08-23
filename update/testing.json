@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "branch": "Xenu's Testing",
-  "version": null,
-  "downloadUrl": null,
-  "sha256": null,
-  "size": null,
+  "version": "DEV-014",
+  "downloadUrl": "https://github.com/XenuNL/XenusDRO2Tool/releases/download/dev-online-test-1/XenusDRO2Tool_DEV-014.zip",
+  "sha256": "322c4315133eb5c54e5f688a0cf8f014d600b3eeb957c4866848ae7a56c6cc24",
+  "size": 888388,
   "minimumLauncherVersion": "DEV-009",
   "gameBranch": "alpha",
   "gameBuild": "0.20.0",
-  "notes": "No Testing release has been published yet."
+  "notes": "First online self-update test build with visible UI marker."
 }
