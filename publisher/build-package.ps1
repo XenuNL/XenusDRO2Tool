@@ -17,9 +17,11 @@ $items=@(Get-ChildItem -LiteralPath $extract -Force)
 $base=$extract
 if($items.Count -eq 1 -and $items[0].PSIsContainer){$base=$items[0].FullName}
 
-Copy-Item -LiteralPath (Join-Path $base '*') -Destination $payloadOut -Recurse -Force
+Get-ChildItem -LiteralPath $base -Force | ForEach-Object {
+    Copy-Item -LiteralPath $_.FullName -Destination $payloadOut -Recurse -Force
+}
 
-# Replace the old runtime with the new build identity while preserving the proven runtime logic.
+# Replace the old runtime with the requested build identity/UI deltas while preserving runtime logic.
 $runtime=@(Get-ChildItem -LiteralPath $payloadOut -Filter 'Xenus_DRO2_Tool_*.ps1' -File)
 if($runtime.Count -ne 1){throw "Expected exactly one runtime PS1 in base package; found $($runtime.Count)"}
 $text=Get-Content -LiteralPath $runtime[0].FullName -Raw
@@ -27,16 +29,30 @@ foreach($r in @($cfg.replacements)){
     if(-not $text.Contains([string]$r.from)){throw "Required replacement source not found: $($r.from)"}
     $text=$text.Replace([string]$r.from,[string]$r.to)
 }
+if($cfg.ensureUiReadyMarker -eq $true -and -not $text.Contains('XENUS_UI_READY_MARKER')){
+    $needle="        Write-LauncherRuntimeTrace ('WINFORMS_FORM_SHOWN handle=0x'+`$form.Handle.ToInt64().ToString('X')+' visible='+`$visible+' showInTaskbar='+`$form.ShowInTaskbar+' state='+`$form.WindowState)"
+    if(-not $text.Contains($needle)){throw 'Could not find WinForms Shown trace insertion point.'}
+    $marker="`r`n        if(-not [string]::IsNullOrWhiteSpace(`$env:XENUS_UI_READY_MARKER)){try{Set-Content -LiteralPath `$env:XENUS_UI_READY_MARKER -Value ('shown='+(Get-Date -Format o)+' handle='+`$form.Handle.ToInt64()+' visible='+`$visible) -Encoding ASCII}catch{}}"
+    $text=$text.Replace($needle,$needle+$marker)
+}
 Remove-Item -LiteralPath $runtime[0].FullName -Force
 $newRuntime=Join-Path $payloadOut ([string]$cfg.runtimeFile)
 [System.IO.File]::WriteAllText($newRuntime,$text,(New-Object System.Text.UTF8Encoding($true)))
 
-# Use the current updater template. This lets updater fixes ship without rebuilding the EXE/bridge.
+# Ship the current updater template without rebuilding the proven launcher EXE/bridge.
 Copy-Item -LiteralPath 'publisher/updater-template.ps1' -Destination (Join-Path $payloadOut 'XenusDRO2Updater.ps1') -Force
 
-# Regenerate the developer console helper so it always points at the current runtime filename.
+# Always regenerate the developer console helper for the current runtime filename.
 $bat="@echo off`r`ncd /d `"%~dp0`"`r`npowershell.exe -NoProfile -ExecutionPolicy Bypass -File `"%~dp0$($cfg.runtimeFile)`"`r`npause`r`n"
 [System.IO.File]::WriteAllText((Join-Path $payloadOut 'DEV_VISIBLE_CONSOLE.bat'),$bat,[System.Text.Encoding]::ASCII)
+
+# Keep offline/developer fallback manifests inside the package as well.
+$manifestDir=Join-Path $payloadOut 'release-manifests'
+New-Item -ItemType Directory -Force -Path $manifestDir | Out-Null
+foreach($channel in @('stable','testing')){
+    $repoManifest=Join-Path (Get-Location) ("update/$channel.json")
+    if(Test-Path -LiteralPath $repoManifest){Copy-Item -LiteralPath $repoManifest -Destination (Join-Path $manifestDir "$channel.json") -Force}
+}
 
 $readme=@"
 Xenu's DRO2 Tool - $($cfg.version)
