@@ -1,0 +1,15 @@
+{
+    "schemaVersion":  1,
+    "identity":  "steamid64-sha256",
+    "users":  {
+                  "43af7fb909da5bfe0237f0fa482b2708be8ceb2e41f28159ef99d66600eaaa28":  {
+                                                                                           "channels":  [
+                                                                                                            "main-stable",
+                                                                                                            "alpha-stable",
+                                                                                                            "main-testing",
+                                                                                                            "alpha-testing",
+                                                                                                            "dev-unstable"
+                                                                                                        ]
+                                                                                       }
+              }
+}
