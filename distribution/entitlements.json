@@ -18,6 +18,14 @@
         "main-testing",
         "alpha-testing"
       ]
+    },
+    "32c202d3165669dcaac85a8cdf31acd30afe1891e920ad7d4d7e96a5625fec58": {
+      "channels": [
+        "main-stable",
+        "alpha-stable",
+        "main-testing",
+        "alpha-testing"
+      ]
     }
   }
 }
