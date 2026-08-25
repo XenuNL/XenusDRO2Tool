@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "dev-unstable",
-  "displayName": "Internal Dev",
+  "displayName": "Dev - Issues",
   "enabled": true,
   "version": "DEV-030",
   "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-010/package-010.zip",
