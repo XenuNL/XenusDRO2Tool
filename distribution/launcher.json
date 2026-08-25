@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "version": "0.2.0",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/launcher-0.2.0/XenusDRO2Launcher_v0.2.0.zip",
-  "sha256": "8c356f7dc72acaedd8c8e1250effbb89a7ad8fa0eb84a1a305ddcad3d1cdbf3e",
-  "exeSha256": "fee38dc50a5f674968c8bd6b67bb0d7a8e928ecb14f875e4678933a453fd5669",
-  "size": 11712
+  "version": "0.2.1",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/launcher-0.2.1/XenusDRO2Launcher_v0.2.1.zip",
+  "sha256": "d2921a674c39709aa53e36d8cc3b72f75695b50dba14c394068cd395ac5a93ca",
+  "exeSha256": "a2295f3e2de122cb7d1d99ce7d2d97bf6277a156a6f1addb6f8ec59dedd6726c",
+  "size": 10765
 }
