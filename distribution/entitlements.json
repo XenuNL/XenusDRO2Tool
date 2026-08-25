@@ -8,7 +8,9 @@
         "alpha-stable",
         "main-testing",
         "alpha-testing",
-        "dev-unstable"
+        "dev-unstable",
+        "dev-features",
+        "dev-integration"
       ]
     },
     "7311797e87aa3a82f28307be7ba34cbab591afb6d32b951bd607c68ee2b11a12": {
