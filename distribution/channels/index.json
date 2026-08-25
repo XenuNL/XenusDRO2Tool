@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "channels": [
+    { "id": "main-stable", "displayName": "Main Stable", "listed": true },
+    { "id": "alpha-stable", "displayName": "Alpha Stable", "listed": true },
+    { "id": "main-testing", "displayName": "Main Testing", "listed": true },
+    { "id": "alpha-testing", "displayName": "Alpha Testing", "listed": true },
+    { "id": "dev-unstable", "displayName": "Dev - Issues", "listed": true },
+    { "id": "dev-features", "displayName": "Dev - Features", "listed": false },
+    { "id": "dev-integration", "displayName": "Dev - Integration", "listed": false }
+  ]
+}
