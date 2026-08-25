@@ -3,8 +3,8 @@
   "id": "dev-unstable",
   "displayName": "Dev - Issues",
   "enabled": true,
-  "version": "DEV-030",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-010/package-010.zip",
-  "sha256": "ae40cfdd83b8e9eef5596e675ddca06da123708d34a2c656ce031562c4e69330",
-  "size": 894200
+  "version": "DEV-031",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-011/package-011.zip",
+  "sha256": "fb87fcf7bd4899ee1fc3ba77bb5b41f00f88ec6e20936bf9ce424ab3da6e6c71",
+  "size": 894890
 }
