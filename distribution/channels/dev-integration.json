@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-047 Integration Hotfix",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-046/package-046.zip",
-  "sha256": "409c16a3b2665926c5ab4f409bc63ff385b8ae9898adaabfb4a8ca64fd94b216",
-  "size": 908510
+  "version": "DEV-048 Integration",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-047/package-047.zip",
+  "sha256": "2a159fae7d4e252a37c58a0760ed32d95ab577271d42fa6ca4904b0708bfb35c",
+  "size": 908935
 }
