@@ -17,14 +17,14 @@
       "message": "Temporarily disabled while compatibility with the latest game update is being verified."
     },
     "main-testing": {
-      "downloadAllowed": false,
-      "launchAllowed": false,
-      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
     },
     "alpha-testing": {
-      "downloadAllowed": false,
-      "launchAllowed": false,
-      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
     },
     "dev-unstable": {
       "downloadAllowed": true,
