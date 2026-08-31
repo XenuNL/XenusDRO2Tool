@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "global": {
+    "downloadAllowed": true,
+    "launchAllowed": true,
+    "message": ""
+  },
+  "channels": {
+    "main-stable": {
+      "downloadAllowed": false,
+      "launchAllowed": false,
+      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+    },
+    "alpha-stable": {
+      "downloadAllowed": false,
+      "launchAllowed": false,
+      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+    },
+    "main-testing": {
+      "downloadAllowed": false,
+      "launchAllowed": false,
+      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+    },
+    "alpha-testing": {
+      "downloadAllowed": false,
+      "launchAllowed": false,
+      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+    },
+    "dev-unstable": {
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
+    },
+    "dev-features": {
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
+    },
+    "dev-integration": {
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
+    }
+  }
+}
