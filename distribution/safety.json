@@ -12,9 +12,9 @@
       "message": "Temporarily disabled while compatibility with the latest game update is being verified."
     },
     "alpha-stable": {
-      "downloadAllowed": false,
-      "launchAllowed": false,
-      "message": "Temporarily disabled while compatibility with the latest game update is being verified."
+      "downloadAllowed": true,
+      "launchAllowed": true,
+      "message": ""
     },
     "main-testing": {
       "downloadAllowed": true,
