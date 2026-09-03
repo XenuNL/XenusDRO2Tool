@@ -3,8 +3,8 @@
   "id": "alpha-testing",
   "displayName": "Alpha Testing",
   "enabled": true,
-  "version": "v1.2.1 Alpha Testing",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-105/package-105.zip",
-  "sha256": "54d9b8e65715ae9d0033e25232759cbdc6ddfec4c0cd32ec0b97758603878a8a",
-  "size": 1151067
+  "version": "v1.2.2 Alpha Testing",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-107/package-107.zip",
+  "sha256": "d9d184accaeb09dae800431b9303056442cb826bc63c96818e307e66a543743f",
+  "size": 1151673
 }
