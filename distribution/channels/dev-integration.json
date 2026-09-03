@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-INTEGRATION-006-XMENU",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-097/package-097.zip",
-  "sha256": "bf8867f7a02f8be4c7acb17f81d14546cc294709e7c82f60abc2a214de3a962e",
-  "size": 1148318
+  "version": "DEV-INTEGRATION-007-XMENU",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-098/package-098.zip",
+  "sha256": "eca010566ddec90b8bac8a8855d7b5f1605e28f5170a5c5acbf3672f3b77482f",
+  "size": 1149685
 }
