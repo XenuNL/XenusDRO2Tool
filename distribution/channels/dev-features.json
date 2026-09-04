@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-028-CAR-MARKET-RUNTIME-FORCE-REFRESH",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-144/package-144.zip",
-  "sha256": "e517482e43c2c661ccabd7cc9fb12e220916ce0e93826e54e400fbf8ce88e38a",
-  "size": 1188711
+  "version": "DEV-FEAT-028-CAR-MARKET-RUNTIME-FORCE-REFRESH-R1",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-145/package-145.zip",
+  "sha256": "18f9e127f368bb17f4468cdbe05b4f60bd9989bbc262527bf7ca4e7572e88a08",
+  "size": 1188918
 }
