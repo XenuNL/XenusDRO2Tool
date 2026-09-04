@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-023R1-CAR-MARKET-GROWTH-CONTROL",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-128/package-128.zip",
-  "sha256": "afac16d1babd25601c8448824f1ddcbc0fd036ddbc9c466a7db5db2855f2e242",
-  "size": 1185603
+  "version": "DEV-FEAT-024-CAR-MARKET-TAIL-GROWTH-CONTROL",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-129/package-129.zip",
+  "sha256": "adf11ab4cfa8e2bef9c53a7541d697da53ae423405a4ebd071e527e1d7a13a64",
+  "size": 1186581
 }
