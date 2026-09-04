@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-027-CAR-MARKET-SCHEDULE-PROBE",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-143/package-143.zip",
-  "sha256": "d9ee550c26bde37053e343bc3d76824d0b7b24193d19e8eb1d7c42586fff115d",
-  "size": 1186272
+  "version": "DEV-FEAT-028-CAR-MARKET-RUNTIME-FORCE-REFRESH",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-144/package-144.zip",
+  "sha256": "e517482e43c2c661ccabd7cc9fb12e220916ce0e93826e54e400fbf8ce88e38a",
+  "size": 1188711
 }
