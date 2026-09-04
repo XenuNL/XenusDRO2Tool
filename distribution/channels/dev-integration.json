@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-INTEGRATION-015-CAR-MARKET-CORE",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-119/package-119.zip",
-  "sha256": "7c77b22572ef758ec2e1edea99d6915d8c5cfc83578552a8e75dc431de0cd616",
-  "size": 1179350
+  "version": "DEV-INTEGRATION-015-CAR-MARKET-CORE-R1",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-135/package-135.zip",
+  "sha256": "4d4625da8231640267da2fcd6c975736c3bd815393eed7c61e24eba8d0470d65",
+  "size": 1179335
 }
