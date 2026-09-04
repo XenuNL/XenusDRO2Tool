@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-INTEGRATION-014-CAR-UNLOCKER-HOTFIX",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-113/package-113.zip",
-  "sha256": "6d252d9cb89c602729327aced6c44ef2892f000c124233480d8b012f0a978d51",
-  "size": 1154084
+  "version": "DEV-INTEGRATION-015-CAR-MARKET-CORE",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-119/package-119.zip",
+  "sha256": "7c77b22572ef758ec2e1edea99d6915d8c5cfc83578552a8e75dc431de0cd616",
+  "size": 1179350
 }
