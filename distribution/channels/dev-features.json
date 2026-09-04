@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-026-CAR-MARKET-CACHE-INJECTION-R2",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-140/package-140.zip",
-  "sha256": "ae2eb1ac5a34e4fc96aa6ba06473cd2bf3ca9bfa162ffe651f5006a095489830",
-  "size": 1182396
+  "version": "DEV-FEAT-026-CAR-MARKET-CACHE-INJECTION-R3",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-141/package-141.zip",
+  "sha256": "ee36f10dc37712ee3d9fd77ffd7b859c5ef9b7b816d4d832faafbaac72cb088c",
+  "size": 1182615
 }
