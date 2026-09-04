@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-025-CAR-MARKET-UNITYFS-GAP-CONTROL-R1",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-134/package-134.zip",
-  "sha256": "a06d2d24ad41b96052a5dc42dbff53d0e860dc80cf321b463a14c615c8ace415",
-  "size": 1187326
+  "version": "DEV-FEAT-026-CAR-MARKET-CACHE-INJECTION",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-136/package-136.zip",
+  "sha256": "8ccb2b5d98b39f3858ad21586f04196dac1e01ad5e1499c2afb6e3e0c5ace2d3",
+  "size": 1182346
 }
