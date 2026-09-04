@@ -3,8 +3,8 @@
   "id": "dev-features",
   "displayName": "Dev - Features",
   "enabled": true,
-  "version": "DEV-FEAT-021-CAR-MARKET-DIAGNOSTIC",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-121/package-121.zip",
-  "sha256": "a1ef6b033a2f29a93cb55cfd746d33a0bd708d40edfba2ff78adf44ab4fdacf8",
-  "size": 1181494
+  "version": "DEV-FEAT-021R1-CAR-MARKET-DIAGNOSTIC",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-123/package-123.zip",
+  "sha256": "1c5dff4b2f8a999528f2363935fbf85b785e74c0c5b88cb19fb705e717f6ef58",
+  "size": 1181894
 }
