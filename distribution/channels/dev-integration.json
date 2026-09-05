@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-HUD-001-ALPHA-PROTOTYPE",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-146/package-146.zip",
-  "sha256": "b60568e80a33b87fb974641f72d8d9ee0b386e389b2bc651a0b432bafb16abe7",
-  "size": 1328094
+  "version": "DEV-HUD-002-EARLY-INJECTION",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-147/package-147.zip",
+  "sha256": "f6b2ad091dc8f6539eb6cbb2ea104876f2502c3054605afebcab00ede72a503b",
+  "size": 1328770
 }
