@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-HUD-003-XMENU-UI-CLEANUP",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-151/package-151.zip",
-  "sha256": "0a4a94b2a86a0e89d839c0e0248caf5969604dd6ef636da37af20d6fdc7d9e74",
-  "size": 1329897
+  "version": "DEV-HUD-004-XMENU-UI-FIXES-R1",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-153/package-153.zip",
+  "sha256": "4a25543cc444ab0dc0bacad57099ad1e4153c8419de81c398dea102b0d6854ff",
+  "size": 1330667
 }
