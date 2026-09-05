@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-HUD-004-XMENU-UI-FIXES-R1",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-153/package-153.zip",
-  "sha256": "4a25543cc444ab0dc0bacad57099ad1e4153c8419de81c398dea102b0d6854ff",
-  "size": 1330667
+  "version": "DEV-UI-005-SETUP-SAVE-BRANCH-BUTTONS",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-154/package-154.zip",
+  "sha256": "c63cd5dea599fd152bb82c16c50ec8bba16bf72938afb5121f306759f3f77d58",
+  "size": 1332033
 }
