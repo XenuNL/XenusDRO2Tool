@@ -3,8 +3,8 @@
   "id": "dev-integration",
   "displayName": "Dev - Integration",
   "enabled": true,
-  "version": "DEV-UI-005-SETUP-SAVE-BRANCH-BUTTONS",
-  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-154/package-154.zip",
-  "sha256": "c63cd5dea599fd152bb82c16c50ec8bba16bf72938afb5121f306759f3f77d58",
-  "size": 1332033
+  "version": "DEV-UI-006-HOME-LAYOUT-CLEANUP",
+  "downloadUrl": "https://github.com/XenuNL/runtime-cache/releases/download/cache-155/package-155.zip",
+  "sha256": "d7db100c83e49d9a708e752927f96ceb099ef73a57e8f112b9b708bbaf5d80c6",
+  "size": 1332824
 }
